@@ -2,9 +2,9 @@
 #include <iostream>
 #include <unordered_map>
 #include "dependencies/conversions.hpp"
+#include "dependencies/graphics.hpp"
 #include "dependencies/map.hpp"
 #include "dependencies/tree.hpp"
-#include "dependencies/graphics.hpp"
 
 #ifdef _WIN32
 #include <windows.h>
@@ -20,11 +20,14 @@ unordered_map<char, string> freq2;
 
 void compressed(string s, hufftree *root)
 {
-    gotoxy(0, 10);                                  //Needs to be fixed in a new issue
-    cout << "Size after compression is: " << sizeof(root);
+    gotoxy(0, 10); //Needs to be fixed in a new issue
+    cout << "Size after compression is: " << sizeof(root) << " bits";
     cout << "\nCompressed encoded message is:" << endl;
-    for(int i=0; s[i] != '\0'; i++)
+    for (int i = 0; s[i] != '\0'; i++)
         cout << freq2[s[i]];
+
+    gotoxy(0, 15);
+    cout << "Compression factor: " << totcount/sizeof(root);
 }
 
 char find_key_value(int data)
@@ -34,7 +37,7 @@ char find_key_value(int data)
             return i.first;
 }
 
-void encode(hufftree *root, string s="\0")
+void encode(hufftree *root, string s = "\0")
 {
     if (root->left == NULL && root->right == NULL)
     {
@@ -92,11 +95,11 @@ int main()
         cout << input[i];
     for (int i = 0; input[i] != '\0'; i++)
         totcount++;
-    cout << "\nSize of text : " << totcount << endl;
+    cout << "\nSize of text : " << totcount << " bits" << endl;
     strToBinary(input);
     calcfreq(input);
     hufftree *root = implement_tree();
-    encode(root);                       //Causing the program to exit instantly.
+    encode(root); //Causing the program to exit instantly.
     compressed(input, root);
 
     int n;
