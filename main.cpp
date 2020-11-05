@@ -18,10 +18,10 @@ unordered_map<char, int> freq, temp;
 int totcount = 0;
 unordered_map<char, string> freq2;
 
-void compressed(string s)
+void compressed(string s, hufftree *root)
 {
-    gotoxy(50, 1);                                  //Needs to be fixed in a new issue
-    cout << "\nSize after compression is: " << sizeof(hufftree);
+    gotoxy(0, 10);                                  //Needs to be fixed in a new issue
+    cout << "Size after compression is: " << sizeof(root);
     cout << "\nCompressed encoded message is:" << endl;
     for(int i=0; s[i] != '\0'; i++)
         cout << freq2[s[i]];
@@ -82,6 +82,7 @@ void calcfreq(string input)
 int main()
 {
     string input;
+    cout << "Enter the text to be compressed:" << endl;
     getline(cin, input);
 
     system("cls");
@@ -96,7 +97,7 @@ int main()
     calcfreq(input);
     hufftree *root = implement_tree();
     encode(root);                       //Causing the program to exit instantly.
-    compressed(input);
+    compressed(input, root);
 
     int n;
     cin >> n;
