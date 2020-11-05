@@ -20,7 +20,7 @@ unordered_map<char, string> freq2;
 
 void compressed(string s, hufftree *root)
 {
-    gotoxy(0, 10); //Needs to be fixed in a new issue
+    gotoxy(0, 10);
     cout << "Size after compression is: " << sizeof(root) << " bits";
     cout << "\nCompressed encoded message is:" << endl;
     for (int i = 0; s[i] != '\0'; i++)
