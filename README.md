@@ -19,4 +19,4 @@ git clone https://github.com/krush11/huffman-coding.git
 - [Devika](https://github.com/Devika-j)
 
 ## Contributions:
-We are not accepting any contributions currently
+Anyone can contribute
