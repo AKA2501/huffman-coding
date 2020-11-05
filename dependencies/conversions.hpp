@@ -6,6 +6,7 @@ using namespace std;
 void strToBinary(string s)
 {
     int n = s.length();
+    cout << "String to ASCII code in binary is: \n";
 
     for (int i = 0; i <= n; i++)
     {
@@ -13,7 +14,6 @@ void strToBinary(string s)
         // ASCII value
         int val = int(s[i]);
 
-        cout << "String to ASCII code in binary is: \n";
         // Convert ASCII value to binary
         string bin = "";
         while (val > 0)
