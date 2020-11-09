@@ -1,0 +1,25 @@
+{
+  "name": "huffman-coding",
+  "version": "1.0.0",
+  "description": "A visualizer to Huffman coding",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krush11/huffman-coding.git"
+  },
+  "keywords": [
+    "huffman-coding"
+  ],
+  "author": "Krushnal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krush11/huffman-coding/issues"
+  },
+  "homepage": "https://github.com/krush11/huffman-coding#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
