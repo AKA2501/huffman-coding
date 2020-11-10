@@ -5,3 +5,6 @@
 
 ## Server configurations "
 node_modules
+
+## Other files ##
+debug.log
